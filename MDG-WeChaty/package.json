@@ -1,0 +1,40 @@
+{
+  "name": "modelarts-wechaty",
+  "version": "0.0.1",
+  "description": "Using wechaty to call AI capability of Huawei Cloud ModelArts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hu-qi/modelarts-wechaty.git"
+  },
+  "keywords": [
+    "wechaty",
+    "modelarts",
+    "modelarts-lab"
+  ],
+  "nodemonCOnfig": {
+    "ignore": [
+      "images/*",
+      "results/*"
+    ]
+  },
+  "author": "hu-qi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "form-data": "^4.0.0",
+    "node-fetch": "^2.6.7",
+    "nodemon": "^2.0.16",
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^0.60.12",
+    "wechaty-puppet-wechat": "^0.28.1"
+  },
+  "bugs": {
+    "url": "https://github.com/hu-qi/modelarts-wechaty/issues"
+  },
+  "homepage": "https://github.com/hu-qi/modelarts-wechaty#readme"
+}
