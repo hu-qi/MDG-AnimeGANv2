@@ -3,14 +3,19 @@ const { Wechaty, FileBox } = require('wechaty');
 const axios = require('axios');
 const FormData = require('form-data');
 const fs = require('fs');
-const config = require('./config');
+console.log(process.env.NODE_ENV)
+const config = process.env.NODE_ENV? require(`./config.${process.env.NODE_ENV}`) : require('./config');
 const fetch = require('node-fetch')
+
+// const {PuppetPadlocal} = require("wechaty-puppet-padlocal");
+// const puppet = new PuppetPadlocal({token: config.Token})
 
 const name = 'wechat-puppet-wechat';
 let bot = '';
 bot = new Wechaty({
     name, // generate xxxx.memory-card.json and save login data for the next login
     puppet: 'wechaty-puppet-service',
+    // puppet,
     puppetOptions: {
         token: config.Token,
     }

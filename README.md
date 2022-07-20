@@ -18,7 +18,7 @@ cd ./AnimeGANv2 && python app.py
 ```bash
 cd MDG-WeChaty
 npm install
-export WECHATY_PUPPET_SERVICE_TOKEN=YOURTOKEN
+export WECHATY_PUPPET_SERVICE_TOKEN=puppet_paimon_878592a1-4176-43b1-93cd-13b369725971
 npm run dev
 ```
 
