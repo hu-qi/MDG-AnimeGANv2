@@ -17,10 +17,12 @@
     "modelarts",
     "modelarts-lab"
   ],
-  "nodemonCOnfig": {
+  "nodemonConfig": {
     "ignore": [
       "images/*",
-      "results/*"
+      "results/*",
+      "avatars/*",
+      "*.json"
     ]
   },
   "author": "hu-qi",
@@ -32,12 +34,15 @@
     "node-fetch": "^2.6.7",
     "nodemon": "^2.0.16",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.60.12",
-    "wechaty-puppet-padlocal": "^1.20.1",
-    "wechaty-puppet-wechat": "^0.28.1"
+    "wechaty": "^1.20.2",
+    "wechaty-puppet-wechat": "^1.18.4"
   },
   "bugs": {
     "url": "https://github.com/hu-qi/modelarts-wechaty/issues"
   },
-  "homepage": "https://github.com/hu-qi/modelarts-wechaty#readme"
+  "homepage": "https://github.com/hu-qi/modelarts-wechaty#readme",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  }
 }

@@ -18,28 +18,12 @@ cd ./AnimeGANv2 && python app.py
 ```bash
 cd MDG-WeChaty
 npm install
-export WECHATY_PUPPET_SERVICE_TOKEN=puppet_paimon_878592a1-4176-43b1-93cd-13b369725971
 npm run dev
 ```
 
-## Notice
+> Changelog：[change to UOS web](https://wechaty.js.org/2022/07/22/wechaty-office-hour/).
 
-```
-SyntaxError: Unexpected token < in JSON at position 0
-    at JSON.parse (<anonymous>)
-    at IncomingMessage.<anonymous> (MDG-AnimeGANv2\MDG-WeChaty\node_modules\wechaty-puppet-service\dist\src\client\puppet-service.js:59:34)
-    at IncomingMessage.emit (node:events:539:35)
-    at IncomingMessage.emit (node:domain:475:12)
-    at endReadableNT (node:internal/streams/readable:1345:12)  
-    at proce
-```
+## More Information
 
-Modify puppet-service.js:59 to: 
+See the blog in [wechaty.js.org](https://wechaty.js.org/2022/07/21/three-steps-to-develop-a-chatbot-to-generate-cartoon-avatars-in-one-second/) or in [Ai Gallery](https://developer.huaweicloud.com/develop/aigallery/article/detail?id=ce5e7b98-a738-4833-adad-ef9ce75f9151).
 
-```javascript
-try {
-    resolve(JSON.parse(body));
-}catch(err) {
-    return {}
-}
-```

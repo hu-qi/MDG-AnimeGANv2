@@ -1,4 +1,4 @@
-const { Wechaty, FileBox } = require('wechaty');
+const { Wechaty, FileBox, WechatyBuilder } = require('wechaty');
 
 const axios = require('axios');
 const FormData = require('form-data');
@@ -11,15 +11,23 @@ const fetch = require('node-fetch')
 // const puppet = new PuppetPadlocal({token: config.Token})
 
 const name = 'wechat-puppet-wechat';
-let bot = '';
-bot = new Wechaty({
-    name, // generate xxxx.memory-card.json and save login data for the next login
-    puppet: 'wechaty-puppet-service',
-    // puppet,
+// let bot = '';
+// bot = new Wechaty({
+//     name, // generate xxxx.memory-card.json and save login data for the next login
+//     puppet: 'wechaty-puppet-service',
+//     // puppet,
+//     puppetOptions: {
+//         token: config.Token,
+//     }
+// });
+
+const bot = WechatyBuilder.build({
+    name,
     puppetOptions: {
-        token: config.Token,
-    }
-});
+      uos: true  // 开启uos协议
+    },
+    puppet: 'wechaty-puppet-wechat',
+})
 
 //  二维码生成
 function onScan(qrcode, status) {
@@ -28,7 +36,7 @@ function onScan(qrcode, status) {
         'https://wechaty.js.org/qrcode/',
         encodeURIComponent(qrcode),
     ].join('');
-    console.log(qrcodeImageUrl);
+    console.log('qrcodeImageUrl', qrcodeImageUrl);
 }
 
 // 登录
